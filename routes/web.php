@@ -23,32 +23,20 @@ use Illuminate\Support\Facades\Cookie;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::domain('premilitar.' . env('APP_URL'))->group(function () {
-    Route::get('/posts', function () {
-        dd('sim');
-        return 'Second subdomain landing page';
-    });
-});
-
-Route::domain('{account}'.env('APP_URL'))->group(function () {
-    Route::get('/test', function (string $account, string $id) {
-        dd($account);
-    });
-});
 
 Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/city/{id}', [PageController::class, 'city'])->name('city');
 
-Route::get('/page/show/{slug}', function ($slug) {
+/*Route::get('/page/show/{slug}', function ($slug) {
     $fbclid = ((string) Str::uuid());
     Cookie::queue('fbid', $fbclid, 0);
     $page = Page::where('slug', $slug)->first();
     $states = States::orderBy('name')->get();
     
     return view('page_show')->with(['page' => $page, 'states' => $states]);
-})->name('page.show');
+})->name('page.show');*/
 
 Route::get('/page/leader/', function () {
     
@@ -62,7 +50,7 @@ Route::get('/page/end/', function () {
     return view('page_end');
 })->name('page.end');
 
-Route::post('/lead/create/', [LeadController::class, 'create'])->name('lead.create');
+//Route::post('/lead/create/', [LeadController::class, 'create'])->name('lead.create');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -77,19 +65,12 @@ Route::middleware('auth')->group(function () {
         $states = States::orderBy('name')->get();
         return view('page_create')->with(['states'=>$states]);
     })->name('page.create');
-    Route::get('/page/list', function(){
+    /*Route::get('/page/list', function(){
         $pages = Page::orderBy('created_at')->get();
         $seven = Carbon::today()->subDays(7);
         $tree = Carbon::today()->subDays(3);
         $yesterday = Carbon::yesterday();
         $today = Carbon::today();
-        /*$today =  Lead::where(
-            'page_id', '=', 1
-        )->where(
-            'created_at', '>=', $date
-        )->get();
-
-        dd($today);*/
 
         return view('page_list')->with(['pages'=>$pages, 'seven'=>$seven]);
     })->name('page.list');
@@ -98,7 +79,7 @@ Route::middleware('auth')->group(function () {
         $lead = Lead::where('page_id', $id)->orderBy('created_at')->get();
         
         return view('leads_list')->with(['pages'=>$lead]);
-    })->name('lead.list');
+    })->name('lead.list');*/
     
 });
 
