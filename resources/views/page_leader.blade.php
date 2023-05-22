@@ -201,7 +201,7 @@
                         <a href="#cadastro" class="flex items-center">
                             <img src="{{asset('storage/img/logo.svg')}}" class="h-8 mr-3" alt="" />
                             <span
-                                class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Pré-Militar</span>
+                                class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">{{env('APP_NAME')}}</span>
                         </a>
                     </div>
                     <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-2">
@@ -227,7 +227,7 @@
                 </div>
                 <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
                 <div class="sm:flex sm:items-center sm:justify-between">
-                    <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 Pré-Militar™
+                    <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 P{{env('APP_NAME')}}™
                         Todos
                         os
                         direitos resevados.
