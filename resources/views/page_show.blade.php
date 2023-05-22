@@ -232,7 +232,7 @@
                     <a href="#cadastro" class="flex items-center">
                         <img src="{{asset('storage/img/logo.svg')}}" class="h-8 mr-3" alt="{{$page->name}}" />
                         <span
-                            class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Pré-Militar</span>
+                            class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">{{env('APP_NAME')}}</span>
                     </a>
                 </div>
                 <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-2">
