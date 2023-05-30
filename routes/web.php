@@ -41,7 +41,7 @@ Route::get('/city/{id}', [PageController::class, 'city'])->name('city');
     return view('page_show')->with(['page' => $page, 'states' => $states]);
 })->name('page.show');*/
 
-Route::get('/page/leader/', function () {
+Route::get('/indica', function () {
     
     $states = States::orderBy('name')->get();
     return view('page_leader')->with(['states' => $states]);
