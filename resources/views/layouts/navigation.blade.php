@@ -34,9 +34,9 @@
                             </button>
                         </x-slot>
                         <x-slot name="content">
-                            <x-dropdown-link :href="route('page.list')">
+                            {{--<x-dropdown-link :href="route('page.list')">
                                 {{ __('Lista') }}
-                            </x-dropdown-link>
+                            </x-dropdown-link>--}}
                             <x-dropdown-link :href="route('page.create')">
                                 {{ __('Criar') }}
                             </x-dropdown-link>
