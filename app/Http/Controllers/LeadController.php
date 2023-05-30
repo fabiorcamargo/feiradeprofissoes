@@ -48,11 +48,24 @@ class LeadController extends Controller
         //dd(count($request->leads));
         $de = array('(',')',' ','-');
         $para = array('','','','');
+
+        $leader = Leader::create([
+            'leader_name' => $request->leads[0]['name'],
+            'leader_phone' => "55".str_replace($de, $para, $request->leads[0]['tel']),
+            'school_name' => $request->school,
+            'state_id' => $request->state,
+            'city_id' => $request->city,
+            'body' => json_encode($request->all())
+        ]);
+
+        //dd($leader);
+
         foreach($request->leads as $lead){
             //dd($lead);
             $lead['tel'] = "55".str_replace($de, $para, $lead['tel']);
             //dd($lead);
-            $lead = Lead::create([
+            $lead = Lead::create([ 
+                'leader_id' => $leader->id,
                 'name' => $lead['name'],
                 'phone' => $lead['tel'],
                 'state' => $request->state,
@@ -62,14 +75,7 @@ class LeadController extends Controller
         }
         
         
-        $leader = Leader::create([
-            'leader_name' => $request->leads[0]['name'],
-            'leader_phone' => "55".str_replace($de, $para, $request->leads[0]['tel']),
-            'school_name' => $request->school,
-            'state_id' => $request->state,
-            'city_id' => $request->city,
-            'body' => json_encode($request->all())
-        ]);
+        
 
             //dd($request->tel);        
 

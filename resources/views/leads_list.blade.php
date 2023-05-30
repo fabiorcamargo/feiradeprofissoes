@@ -25,9 +25,6 @@
                                         Telefone
                                     </th>
                                     <th scope="col" class="px-6 py-3">
-                                        Idade
-                                    </th>
-                                    <th scope="col" class="px-6 py-3">
                                         UF
                                     </th>
                                     <th scope="col" class="px-6 py-3">
@@ -52,9 +49,7 @@
                                     <td class="px-6 py-4">
                                         {{$page->phone}}
                                     </td>
-                                    <td class="px-6 py-4">
-                                        {{$page->age}}
-                                    </td>
+                                    
                                     <td class="px-6 py-4">
                                         {{($page->State)->abbr}}
                                     </td>

@@ -5,6 +5,7 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProfileController;
 use App\Models\BlogPost;
 use App\Models\Lead;
+use App\Models\Leader;
 use App\Models\Page;
 use App\Models\States;
 use Carbon\Carbon;
@@ -68,7 +69,8 @@ Route::get('/like/down/{id}',  function(BlogPost $id) {
 })->name('like.down');
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    $leaders = Leader::orderBy('id', 'desc')->get();
+    return view('dashboard')->with(['leaders' => $leaders]);
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
@@ -80,7 +82,7 @@ Route::middleware('auth')->group(function () {
         $states = States::orderBy('name')->get();
         return view('page_create')->with(['states'=>$states]);
     })->name('page.create');
-    /*Route::get('/page/list', function(){
+    Route::get('/page/list', function(){
         $pages = Page::orderBy('created_at')->get();
         $seven = Carbon::today()->subDays(7);
         $tree = Carbon::today()->subDays(3);
@@ -91,10 +93,10 @@ Route::middleware('auth')->group(function () {
     })->name('page.list');
     Route::post('/page/create', [PageController::class, 'create'])->name('page.create');
     Route::get('/lead/list/{id}', function($id){
-        $lead = Lead::where('page_id', $id)->orderBy('created_at')->get();
+        $lead = Lead::where('leader_id', $id)->orderBy('created_at')->get();
         
         return view('leads_list')->with(['pages'=>$lead]);
-    })->name('lead.list');*/
+    })->name('lead.list');
     
 });
 

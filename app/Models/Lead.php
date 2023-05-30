@@ -11,7 +11,7 @@ class Lead extends Model
 {
     use HasFactory;
     protected $fillable = [
-    'page_id',
+    'leader_id',
     'name',
     'lastname',
     'phone',
