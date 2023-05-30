@@ -14,10 +14,18 @@ class PageTypeSeeder extends Seeder
     public function run(): void
     {
         PageType::insert([
-            ['name' => 'Pré Militar'],
-            ['name' => 'Bancário'],
-            ['name' => 'ENCCEJA'],
-            ['name' => 'CPA10']
+            ['name' => 'Pré Militar',
+            'slug' => 'premilitar'
+            ],
+            ['name' => 'Bancário',
+            'slug' => 'aprendizbancario'
+            ],
+            ['name' => 'ENCCEJA',
+            'slug' => 'encceja'
+            ],
+            ['name' => 'CPA10',
+            'slug' => 'cpa10'
+            ]
         ]);
     }
 }
