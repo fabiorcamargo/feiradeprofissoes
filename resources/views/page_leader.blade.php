@@ -53,12 +53,12 @@
                             escolhido como representante de sala, continue sendo esforçado e responsável que você terá
                             uma
                             brilhante carreira.</p>
-                        <div class="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
+                        {{--<div class="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
                             <a href="#cadastro"
                                 class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Cadastre-se</a>
                             <a href="#" class="text-sm font-semibold leading-6 text-white">Saiba mais <span
                                     aria-hidden="true">→</span></a>
-                        </div>
+                        </div>--}}
                     </div>
                     <div class="relative mt-16 h-80 lg:mt-8">
                         <img class="absolute left-0 top-0 w-[40rem] max-w-none rounded-md bg-white/5 ring-1 ring-white/10"
@@ -137,8 +137,8 @@
                         </div>
 
                         <div class="flex items-center justify-center gap-x-6 mt-6 lg:justify-start">
-                            <a href="#cadastro"
-                                class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Prosseguir...</a>
+                            <a href="#indica"
+                                class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Iindicar</a>
                             {{--<a href="#" class="text-sm font-semibold leading-6 text-white">Saiba mais
                                 <span aria-hidden="true">→</span></a>--}}
                         </div>
@@ -147,7 +147,7 @@
                 </section>
             </div>
             <div class="mx-auto max-w-7xl py-6 sm:px-6 sm:py-10 lg:px-8">
-                <section
+                <section id="indica"
                     class="relative isolate overflow-hidden bg-white dark:bg-gray-800 px-6 py-16 shadow rounded-lg sm:px-16 sm:py-16 md:py-5 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
                     <div class="mx-auto max-w-full text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
                         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">1ª Indicação
@@ -197,43 +197,40 @@
         </div>
     </form>
 
-    <footer class="">
-        <div class="pt-4 pb-1 bg-white dark:bg-gray-800">
+    <footer class="pt-20 bg-white dark:bg-gray-950">
+        <div class="pt-4 pb-1">
             <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
                 <div class="md:flex md:justify-between">
                     <div class="mb-6 md:mb-0">
                         <a href="#cadastro" class="flex items-center">
-                            <img src="{{asset('storage/img/logo.svg')}}" class="h-8 mr-3" alt="" />
-                            <span
-                                class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">{{env('APP_NAME')}}</span>
+                            <img src="{{asset('storage/img/logo.svg')}}" class="h-8 mr-3" alt="{{env('APP_NAME')}}" />
+                            <h4
+                        class="text-md font-bold tracking-tight sm:text-2xl block bg-gradient-to-r from-sky-500 via-blue-300 to-blue-200 bg-clip-text text-transparent">
+                        {{env('APP_NAME')}}</h4>
                         </a>
-                    </div>
+                    </div>{{--}}
                     <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-2">
                         <div>
-                            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Sobre
-                            </h2>
+                            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Sobre</h2>
                             <ul class="text-gray-600 dark:text-gray-400 font-medium">
                                 <li class="mb-4">
-                                    <a href="https://flowbite.com/" class="hover:underline">Quem Somos</a>
+                                    <a href="#cadastro" class="hover:underline">Quem Somos</a>
                                 </li>
                             </ul>
                         </div>
                         <div>
-                            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal
-                            </h2>
+                            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
                             <ul class="text-gray-600 dark:text-gray-400 font-medium">
                                 <li class="mb-4">
-                                    <a href="#" class="hover:underline">Política de Privacidade</a>
+                                    <a href="#cadastro" class="hover:underline">Política de Privacidade</a>
                                 </li>
                             </ul>
                         </div>
-                    </div>
+                    </div>--}}
                 </div>
                 <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
                 <div class="sm:flex sm:items-center sm:justify-between">
-                    <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 P{{env('APP_NAME')}}™
-                        Todos
-                        os
+                    <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 {{env('APP_NAME')}}™ Todos os
                         direitos resevados.
                     </span>
                     <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
