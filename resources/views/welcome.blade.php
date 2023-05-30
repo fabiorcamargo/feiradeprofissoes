@@ -3,9 +3,8 @@
         {{--<h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
             {{ __('Dashboard') }}
         </h2>--}}
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
-       @livewireStyles
+    
+       
     </x-slot>
 
     <!--
@@ -22,6 +21,7 @@
   }
   ```
 -->
+
 
     <div class="w-full bg-cover bg-center" style="height:32rem; background-image: url({{asset('storage/img/feira.jpg')}});">
         <div class="flex items-center justify-center h-full w-full bg-gray-900 bg-opacity-50">
@@ -69,10 +69,9 @@
                     <div class="row-end-4">
                         <x-card.like-footer q="{{$post->like}}" l='{{$post->id}}' />
                         </div>
-                        <livewire:counter :post="$post"/> 
                 </div>
-             
-
+                
+                <button onclick="Livewire.emit('openModal', 'edit-user', {{ json_encode(['post' => $post->id]) }})">Edit User</button>
             </div>
                 @endforeach
 
@@ -123,7 +122,8 @@
     </div>
 
 
-@livewireScripts
+    @livewire('livewire-ui-modal')
+    @livewireScripts
     <footer class="pt-20">
         <div class="pt-4 pb-1">
             <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8 shadow">

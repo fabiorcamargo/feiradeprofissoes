@@ -8,6 +8,7 @@ use Livewire\Component;
 class Counter extends Component
 {
     public $count;
+    public $item_id;
     public BlogPost $post;
     
  
@@ -15,11 +16,13 @@ class Counter extends Component
     {
 
         $this->count = $this->post->like;
+        $this->item_id = $this->post->id; 
     }
 
     public function increment()
     { 
         $this->count++;
+        
         $this->post->like = $this->count;
         $this->post->save();
 
