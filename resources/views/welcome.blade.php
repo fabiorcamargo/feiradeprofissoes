@@ -54,11 +54,10 @@
                 class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-gray-500">
                 <div class="grid grid-rows-1">
                     <div href="#cadastro" class="row">
-                        <button data-modal-target="defaultModal{{$post->id}}" data-modal-toggle="defaultModal{{$post->id}}" class="h-50 w-50 flex items-center justify-center rounded-full">
-                            <img class="rounded-md bg-white/5 ring-1 ring-white/10"
-                                src="{{asset("$post->img")}}" alt="App screenshot" 
-                                height="500">
-                        </button>
+                        <button onclick="Livewire.emit('openModal', 'edit-user', {{ json_encode(['post' => $post->id]) }})"><img class="rounded-md bg-white/5 ring-1 ring-white/10"
+                            src="{{asset("$post->img")}}" alt="App screenshot" 
+                            height="500"></button>
+                        
                         <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">{{$post->title}}</h2>
 
                         <p class="mt-2 text-justify text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
@@ -71,7 +70,7 @@
                         </div>
                 </div>
                 
-                <button onclick="Livewire.emit('openModal', 'edit-user', {{ json_encode(['post' => $post->id]) }})">Edit User</button>
+                
             </div>
                 @endforeach
 
