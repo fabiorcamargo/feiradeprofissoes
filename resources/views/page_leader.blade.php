@@ -197,7 +197,7 @@
         </div>
     </form>
 
-    <footer class="pt-20 bg-white dark:bg-gray-950">
+    <footer class="pt-20">
         <div class="pt-4 pb-1">
             <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
                 <div class="md:flex md:justify-between">
