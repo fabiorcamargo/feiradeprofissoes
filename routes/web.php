@@ -3,6 +3,7 @@
 use App\Http\Controllers\LeadController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProfileController;
+use App\Models\BlogPost;
 use App\Models\Lead;
 use App\Models\Page;
 use App\Models\States;
@@ -25,7 +26,9 @@ use Illuminate\Support\Facades\Cookie;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $posts = BlogPost::all();
+    //$states = States::orderBy('name')->get();
+    return view('welcome')->with(['posts' => $posts]);
 });
 Route::get('/city/{id}', [PageController::class, 'city'])->name('city');
 
@@ -50,7 +53,19 @@ Route::get('/page/end/', function () {
     return view('page_end');
 })->name('page.end');
 
-//Route::post('/lead/create/', [LeadController::class, 'create'])->name('lead.create');
+Route::post('/lead/create/', [LeadController::class, 'create'])->name('lead.create');
+Route::post('/leader/create/', [LeadController::class, 'leader'])->name('leader.create');
+Route::get('/like/up/{id}',  function(BlogPost $id) {
+    $id->like++;
+    $id->save();
+    Cookie::queue("c_like$id->id", "isLiked", 60);
+})->name('like.up');
+
+Route::get('/like/down/{id}',  function(BlogPost $id) {
+    $id->like--;
+    $id->save();
+    Cookie::queue("c_like$id->id", "", 60);
+})->name('like.down');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

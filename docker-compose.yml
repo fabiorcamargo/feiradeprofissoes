@@ -13,19 +13,19 @@ services:
         depends_on:
             - redis
         networks:
-            - laravel-1
+            - laravel-2
 
     # nginx
     nginx:
         image: nginx:alpine
         restart: unless-stopped
         ports:
-            - "8994:80"
+            - "8995:80"
         volumes:
             - ./:/var/www
             - ./docker/nginx/:/etc/nginx/conf.d/
         networks:
-            - laravel-1
+            - laravel-2
 
     # db mysql
     db:
@@ -39,9 +39,9 @@ services:
         volumes:
             - ./.docker/mysql/dbdata:/var/lib/mysql
         ports:
-            - "3394:3306"
+            - "3395:3306"
         networks:
-            - laravel-1
+            - laravel-2
 
     # queue
     queue:
@@ -54,14 +54,14 @@ services:
             - redis
             - app
         networks:
-            - laravel-1
+            - laravel-2
 
     # redis
     redis:
         image: redis:latest
         networks:
-            - laravel-1
+            - laravel-2
 
 networks:
-    laravel-1:
+    laravel-2:
         driver: bridge

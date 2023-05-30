@@ -13,14 +13,11 @@ return new class extends Migration
     {
         Schema::create('leads', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('page_id')->constrained('pages');
             $table->string('name');
-            $table->string('lastname');
             $table->string('phone');
-            $table->string('email');
-            $table->integer('age');
-            $table->integer('state');
-            $table->integer('city');
+            $table->string('state')->nullable();
+            $table->string('city')->nullable();
+            $table->string('school')->nullable();
             $table->timestamps();
         });
     }

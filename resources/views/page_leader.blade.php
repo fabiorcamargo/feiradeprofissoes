@@ -24,174 +24,178 @@
 -->
 
 
-
-    <div class="bg-gray-200 dark:bg-zinc-950 pb-20">
-
-        <div class="mx-auto max-w-7xl py-6 sm:px-6 sm:py-10 lg:px-8">
-            <div
-                class="relative isolate overflow-hidden shadow-sky-500/40 dark:shadow-sky-500/40 bg-sky-950 px-6 pt-16 shadow-xl rounded-lg sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
-                <svg viewBox="0 0 1024 1024"
-                    class="absolute left-1/2 top-1/2 -z-10 h-[64rem] w-[64rem] -translate-y-1/2 [mask-image:radial-gradient(closest-side,white,transparent)] sm:left-full sm:-ml-80 lg:left-1/2 lg:ml-0 lg:-translate-x-1/2 lg:translate-y-0"
-                    aria-hidden="true">
-                    <circle cx="512" cy="512" r="512" fill="url(#759c1415-0410-454c-8f7c-9a820de03641)"
-                        fill-opacity="0.7" />
-                    <defs>
-                        <radialGradient id="759c1415-0410-454c-8f7c-9a820de03641">
-                            <stop stop-color="#7775D6" />
-                            <stop offset="1" stop-color="#7775D6" />
-                        </radialGradient>
-                    </defs>
-                </svg>
-                <div class="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
-                    <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Portal do Representante de
-                        Turma
-                    </h2>
-                    <p class="mt-6 text-lg leading-8 text-gray-300">Parabéns se você chegou até aqui é porque você foi
-                        escolhido como representante de sala, continue sendo esforçado e responsável que você terá uma
-                        brilhante carreira.</p>
-                    <div class="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
-                        <a href="#cadastro"
-                            class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Cadastre-se</a>
-                        <a href="#" class="text-sm font-semibold leading-6 text-white">Saiba mais <span
-                                aria-hidden="true">→</span></a>
+    <form action="{{route('leader.create')}}" method="post" enctype="multipart/form-data">
+        @csrf
+        <div class="bg-gray-200 dark:bg-zinc-950 pb-20">
+            
+            <div class="mx-auto max-w-7xl py-6 sm:px-6 sm:py-10 lg:px-8">
+                <x-auth-session-status class="mb-4" :status="session('status')" />
+                <div
+                    class="relative isolate overflow-hidden shadow-sky-500/40 dark:shadow-sky-500/40 bg-sky-950 px-6 pt-16 shadow-xl rounded-lg sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
+                    <svg viewBox="0 0 1024 1024"
+                        class="absolute left-1/2 top-1/2 -z-10 h-[64rem] w-[64rem] -translate-y-1/2 [mask-image:radial-gradient(closest-side,white,transparent)] sm:left-full sm:-ml-80 lg:left-1/2 lg:ml-0 lg:-translate-x-1/2 lg:translate-y-0"
+                        aria-hidden="true">
+                        <circle cx="512" cy="512" r="512" fill="url(#759c1415-0410-454c-8f7c-9a820de03641)"
+                            fill-opacity="0.7" />
+                        <defs>
+                            <radialGradient id="759c1415-0410-454c-8f7c-9a820de03641">
+                                <stop stop-color="#7775D6" />
+                                <stop offset="1" stop-color="#7775D6" />
+                            </radialGradient>
+                        </defs>
+                    </svg>
+                    <div class="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
+                        <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Portal do Representante de
+                            Turma
+                        </h2>
+                        <p class="mt-6 text-lg leading-8 text-gray-300">Parabéns se você chegou até aqui é porque você
+                            foi
+                            escolhido como representante de sala, continue sendo esforçado e responsável que você terá
+                            uma
+                            brilhante carreira.</p>
+                        <div class="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
+                            <a href="#cadastro"
+                                class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Cadastre-se</a>
+                            <a href="#" class="text-sm font-semibold leading-6 text-white">Saiba mais <span
+                                    aria-hidden="true">→</span></a>
+                        </div>
                     </div>
-                </div>
-                <div class="relative mt-16 h-80 lg:mt-8">
-                    <img class="absolute left-0 top-0 w-[40rem] max-w-none rounded-md bg-white/5 ring-1 ring-white/10"
-                        src="{{asset('storage/img/leader.jpg')}}" alt="App screenshot" width="500" height="500">
+                    <div class="relative mt-16 h-80 lg:mt-8">
+                        <img class="absolute left-0 top-0 w-[40rem] max-w-none rounded-md bg-white/5 ring-1 ring-white/10"
+                            src="{{asset('storage/img/leader.jpg')}}" alt="App screenshot" width="500" height="500">
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="mx-auto max-w-7xl py-6 sm:px-6 sm:py-10 lg:px-8">
-            <section
-                class="relative isolate overflow-hidden bg-white dark:bg-gray-800 px-6 py-16 shadow-xl rounded-lg sm:px-16 sm:py-16 md:py-5 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
-                <div class="mx-auto max-w-full text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
-                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Indicações da
-                        turma:</h5>
-                    <p class="mt-6 text-lg leading-8 text-gray-900 dark:text-white">Insira seus dados abaixo para
-                        iniciar as
-                        indicações:</p>
-                    <div class="grid gap-2 md:grid-cols-2">
-                        <div class="row">
-                            <x-text-input id="name" class="block w-full" type="text" name="name" :value="old('name')"
-                                placeholder="Nome Líder de Turma" required autocomplete="given-name" />
-                            <x-input-error :messages="$errors->get('name')" class="mt-2" />
+            <div class="mx-auto max-w-7xl py-6 sm:px-6 sm:py-10 lg:px-8">
+
+                <section
+                    class="relative isolate overflow-hidden bg-white dark:bg-gray-800 px-6 py-16 shadow-xl rounded-lg sm:px-16 sm:py-16 md:py-5 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
+                    <div class="mx-auto max-w-full text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Indicações da
+                            turma:</h5>
+                        <p class="mt-6 text-lg leading-8 text-gray-900 dark:text-white">Insira seus dados abaixo para
+                            iniciar as
+                            indicações:</p>
+                        <div class="grid gap-2 md:grid-cols-2">
+                            <div class="row">
+                                <x-text-input id="leads[0][name]" class="block w-full" type="text"
+                                    name="leads[0][name]" placeholder="Nome Líder de Turma" required
+                                    autocomplete="given-name" />
+                            </div>
+                            <div class="row">
+                                <div class="flex">
+                                    <span
+                                        class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-300 border border-r-0 border-gray-300 rounded-l-md dark:bg-gray-700 dark:text-gray-400 dark:border-gray-600">
+                                        <img src="{{asset('/storage/img/flag-brazil.svg')}}" width="40px" alt="Brasil">
+                                        <h4 class="mr-8 ml-2">+55 </h4>
+                                    </span>
+                                    <input type="tel" id="leads[0][tel]" name="leads[0][tel]" minlength="14"
+                                        maxlength="15" placeholder="(99) 9 9999-9999"
+                                        pattern="(\([0-9]{2}\))\s([9]{1})?([0-9]{4})-([0-9]{4})"
+                                        title="(99) 9 9999-9999 (Coloque seu telefone nesse formato)"
+                                        required="required" onkeyup="handlePhone(event)"
+                                        class="block w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 rounded-r-lg shadow-sm"
+                                        required autocomplete="tel">
+                                </div>
+                            </div>
                         </div>
-                        <div class="row">
-                            <div class="flex">
-                                <span
-                                    class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-300 border border-r-0 border-gray-300 rounded-l-md dark:bg-gray-700 dark:text-gray-400 dark:border-gray-600">
-                                    <img src="{{asset('/storage/img/flag-brazil.svg')}}" width="40px" alt="Brasil">
-                                    <h4 class="mr-8 ml-2">+55 </h4>
-                                </span>
-                                <input type="tel" id="tel" name="tel" minlength="14" maxlength="15"
-                                    placeholder="(99) 9 9999-9999"
-                                    pattern="(\([0-9]{2}\))\s([9]{1})?([0-9]{4})-([0-9]{4})"
-                                    title="(99) 9 9999-9999 (Coloque seu telefone nesse formato)" required="required"
-                                    onkeyup="handlePhone(event)"
+
+                        <div class="mt-2">
+
+                            <x-text-input class="block w-full" type="text" name="school" id="school"
+                                 placeholder="Nome da Escola" required />
+                            <x-input-error :messages="$errors->get('school')" class="mt-2" />
+                        </div>
+
+                        <div class="grid gap-2 mt-2 md:grid-cols-2">
+                            <div class="">
+                                <select id="state" name="state"
                                     class="block w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 rounded-r-lg shadow-sm"
-                                    required autocomplete="tel">
+                                    required autocomplete="state">
+                                    <option value="">Selecione seu Estado</option>
+                                    @foreach ($states as $key => $value)
+                                    <option value="{{ $value['id'] }}" {{ old('state')==$value['id'] ? 'selected' : ''
+                                        }}>{{
+                                        $value['name'] }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            <div class="">
+                                <select id="city" name="city"
+                                    class="block w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 rounded-r-lg shadow-sm"
+                                    required autocomplete="city">
+                                    @if(old('city') != null)
+                                    <option value="{{old('city')}} 'selected'">
+                                        {{App\Models\City::find(old('city'))->name}}</option>
+                                    @else
+                                    <option>Selecione sua Cidade</option>
+                                    @endif
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center justify-center gap-x-6 mt-6 lg:justify-start">
+                            <a href="#cadastro"
+                                class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Prosseguir...</a>
+                            {{--<a href="#" class="text-sm font-semibold leading-6 text-white">Saiba mais
+                                <span aria-hidden="true">→</span></a>--}}
+                        </div>
+
+                    </div>
+                </section>
+            </div>
+            <div class="mx-auto max-w-7xl py-6 sm:px-6 sm:py-10 lg:px-8">
+                <section
+                    class="relative isolate overflow-hidden bg-white dark:bg-gray-800 px-6 py-16 shadow rounded-lg sm:px-16 sm:py-16 md:py-5 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
+                    <div class="mx-auto max-w-full text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">1ª Indicação
+                        </h5>
+                        <div class="grid gap-2 md:grid-cols-2">
+                            <div class="row">
+                                <x-text-input id="leads[1][name]" class="block w-full" type="text"
+                                    name="leads[1][name]" placeholder="Nome do Aluno" required />
+                            </div>
+                            <div class="row">
+                                <div class="flex">
+                                    <span
+                                        class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-r-0 border-gray-300 rounded-l-md dark:bg-gray-700 dark:text-gray-400 dark:border-gray-600">
+                                        <img src="{{asset('/storage/img/flag-brazil.svg')}}" width="40px" alt="Brasil">
+                                        <h4 class="mr-8 ml-2">+55 </h4>
+                                    </span>
+                                    <input type="tel" id="leads[1][tel]" name="leads[1][tel]" minlength="10"
+                                        maxlength="15" placeholder="(99) 9 9999-9999"
+                                        title="(99) 9 9999-9999 (Coloque seu telefone nesse formato)"
+                                        required="required" onkeyup="handlePhone(event)"
+                                        class="block w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 rounded-r-lg shadow-sm"
+                                        required autocomplete="tel">
+                                </div>
                             </div>
                         </div>
                     </div>
+                </section>
+            </div>
+            <div class="container1">
+            </div>
+            <div class="text-center">
+                <a href="javascript:void(0);" type="button"
+                    class="animate-bounce add_form_field text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    <x-heroicon-m-user-plus class="w-6 h-6" fill="currentColor" />
+                    <p> Adicionar</p>
 
-                    <div class="mt-2">
+                    <span class="sr-only">Icon description</span>
+                </a>
 
-                        <x-text-input id="name" class="block w-full" type="text" name="name" :value="old('name')"
-                            placeholder="Nome da Escola" required autocomplete="given-name" />
-                        <x-input-error :messages="$errors->get('name')" class="mt-2" />
-                    </div>
+                <x-primary-button
+                    class="text-white bg-green-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 dark:text-white dark:bg-green-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    <x-carbon-send class="w-6 h-6" fill="currentColor" />
+                    {{ __('Enviar') }}
+                </x-primary-button>
+            </div>
 
-                    <div class="grid gap-2 mt-2 md:grid-cols-2">
-                        <div class="">
-                            <select id="state" name="state"
-                                class="block w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 rounded-r-lg shadow-sm"
-                                required autocomplete="state">
-                                <option value="">Selecione seu Estado</option>
-                                @foreach ($states as $key => $value)
-                                <option value="{{ $value['id'] }}" {{ old('state')==$value['id'] ? 'selected' : '' }}>{{
-                                    $value['name'] }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-
-                        <div class="">
-                            <select id="city" name="city"
-                                class="block w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 rounded-r-lg shadow-sm"
-                                required autocomplete="city">
-                                @if(old('city') != null)
-                                <option value="{{old('city')}} 'selected'">
-                                    {{App\Models\City::find(old('city'))->name}}</option>
-                                @else
-                                <option>Selecione sua Cidade</option>
-                                @endif
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="flex items-center justify-center gap-x-6 mt-6 lg:justify-start">
-                        <a href="#cadastro"
-                            class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Prosseguir...</a>
-                        {{--<a href="#" class="text-sm font-semibold leading-6 text-white">Saiba mais
-                            <span aria-hidden="true">→</span></a>--}}
-                    </div>
-
-                </div>
-            </section>
         </div>
-        <div class="mx-auto max-w-7xl py-6 sm:px-6 sm:py-10 lg:px-8">
-            <section
-                class="relative isolate overflow-hidden bg-white dark:bg-gray-800 px-6 py-16 shadow rounded-lg sm:px-16 sm:py-16 md:py-5 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
-                <div class="mx-auto max-w-full text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
-                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">1ª Indicação
-                    </h5>
-                    <div class="grid gap-2 md:grid-cols-2">
-                        <div class="row">
-                            <x-text-input id="name" class="block w-full" type="text" name="name" :value="old('name')"
-                                placeholder="Nome do Aluno" required autocomplete="given-name" />
-                            <x-input-error :messages="$errors->get(" name")" class="mt-2" />
-                        </div>
-                        <div class="row">
-                            <div class="flex">
-                                <span
-                                    class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-300 border border-r-0 border-gray-300 rounded-l-md dark:bg-gray-700 dark:text-gray-400 dark:border-gray-600">
-                                    <img src="{{asset("/storage/img/flag-brazil.svg")}}" width="40px" alt="Brasil">
-                                    <h4 class="mr-8 ml-2">+55 </h4>
-                                </span>
-                                <input type="tel" id="tel" name="tel" minlength="14" maxlength="15"
-                                    placeholder="(99) 9 9999-9999"
-                                    pattern="(\([0-9]{2}\))\s([9]{1})?([0-9]{4})-([0-9]{4})"
-                                    title="(99) 9 9999-9999 (Coloque o telefone nesse formato)" required="required"
-                                    onkeyup="handlePhone(event)"
-                                    class="block w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 rounded-r-lg shadow-sm"
-                                    required autocomplete="tel">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-        <div class="container1">
-        </div>
-        <div class="text-center">
-            <a href="javascript:void(0);" type="button"
-                class="animate-bounce add_form_field text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                <x-heroicon-m-user-plus class="w-6 h-6" fill="currentColor" />
-                <p> Adicionar</p>
-
-                <span class="sr-only">Icon description</span>
-            </a>
-            <a href="javascript:void(0);" type="button"
-                class="add_form_field text-white bg-green-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 dark:bg-green-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                <x-carbon-send class="w-6 h-6" fill="currentColor" />
-                <p> Enviar</p>
-
-                <span class="sr-only">Icon description</span>
-            </a>
-        </div>
-
-    </div>
+    </form>
 
     <footer class="">
         <div class="pt-4 pb-1 bg-white dark:bg-gray-800">
@@ -310,7 +314,7 @@
             e.preventDefault();
             if (x < max_fields) {
                 x++;
-                $(wrapper).append('<div class="mx-auto max-w-7xl py-6 sm:px-6 sm:py-10 lg:px-8"><section    id="sec'+x+'"            class="relative isolate overflow-hidden bg-white dark:bg-gray-800 px-6 py-16 shadow-2xl rounded-lg sm:px-16 sm:py-16 md:py-5 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">                <div class="mx-auto max-w-full text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">'+x+'ª Indicação                    </h5>                    <div class="grid gap-2 md:grid-cols-2">                        <div class="row">                            <input class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm block w-full" id="name" type="text" name="name" placeholder="Nome do Aluno" required="required" autocomplete="given-name">                                                    </div>                        <div class="row">                            <div class="flex">                                <span                                    class="inline-flex items-center px-3 text-sm text-gray-900 bg-white border border-r-0 border-gray-300 rounded-l-md dark:bg-gray-700 dark:text-gray-400 dark:border-gray-600">                                    <img src="{{asset("/storage/img/flag-brazil.svg")}}" width="40px" alt="Brasil">                                    <h4 class="mr-8 ml-2">+55 </h4>                                </span>                                <input type="tel" id="tel" name="tel" minlength="14" maxlength="15"                                    placeholder="(99) 9 9999-9999"                                    pattern="(\([0-9]{2}\))\s([9]{1})?([0-9]{4})-([0-9]{4})"                                    title="(99) 9 9999-9999 (Coloque o telefone nesse formato)" required="required"                                    onkeyup="handlePhone(event)"                                    class="block w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 rounded-r-lg shadow-sm"                                    required autocomplete="tel">                            </div>                        </div>                    </div>                    <div class="flex items-center justify-center gap-x-6 mt-6 lg:justify-start">                        <a href="javascript:void(0);"                            class="add_form_field flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Link</a>                        {{--<a href="#" class="text-sm font-semibold leading-6 text-white">Saiba mais                            <span aria-hidden="true"></span></a>--}}                    </div>                </div>            </section></div>'); //add input box
+                $(wrapper).append('<div class="mx-auto max-w-7xl py-6 sm:px-6 sm:py-10 lg:px-8">    <section    id="sec'+x+'"            class="relative isolate overflow-hidden bg-white dark:bg-gray-800 px-6 py-16 shadow-2xl rounded-lg sm:px-16 sm:py-16 md:py-5 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">                        <div class="mx-auto max-w-full text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">'+x+'ª Indicação                                </h5>                                <div class="grid gap-2 md:grid-cols-2">                                        <div class="row">                                                <input class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm block w-full" id="leads['+x+'][name]" type="text" name="leads['+x+'][name]" placeholder="Nome do '+x+'º Aluno " required="required" >                                                                    </div>                                            <div class="row">                                                    <div class="flex">                                <span                                    class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-r-0 border-gray-300 rounded-l-md dark:bg-gray-700 dark:text-gray-400 dark:border-gray-600">                                    <img src="{{asset("/storage/img/flag-brazil.svg")}}" width="40px" alt="Brasil">                                    <h4 class="mr-8 ml-2">+55 </h4>                                </span>                                <input type="tel" id="leads['+x+'][tel]" name="leads['+x+'][tel]" minlength="10" maxlength="15"                                    placeholder="(99) 9 9999-9999"                                    title="(99) 9 9999-9999 (Coloque seu telefone nesse formato)" required="required"                                    onkeyup="handlePhone(event)"                                    class="block w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 rounded-r-lg shadow-sm"                                    required>                            </div>                                          </div>                                                        </div>                                                                    <div class="flex items-center justify-center gap-x-6 mt-6 lg:justify-start">                                                    <a href="javascript:void(0);"                            class="add_form_field flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Link                            </a>                                                </div>                        </div>                </section></div>'); //add input box
 
                 window.location.href='#sec'+x;
 
