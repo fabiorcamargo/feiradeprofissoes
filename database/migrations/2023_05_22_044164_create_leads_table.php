@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('leads', function (Blueprint $table) {
             $table->id();
             $table->foreignId('leader_id')->constrained('leaders');
+            $table->foreignId('page_id')->nuable();
             $table->string('name');
             $table->string('phone');
             $table->string('state')->nullable();

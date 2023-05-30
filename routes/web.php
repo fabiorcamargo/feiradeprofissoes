@@ -25,7 +25,11 @@ use Illuminate\Support\Facades\Cookie;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+Route::group(['domain' => '{account}.' . env('APP_DOMAIN')], function () {
+    Route::get('do-something', function ($account) {
+        //
+    });
+});
 Route::get('/', function () {
     $posts = BlogPost::all();
     //$states = States::orderBy('name')->get();
@@ -33,14 +37,14 @@ Route::get('/', function () {
 });
 Route::get('/city/{id}', [PageController::class, 'city'])->name('city');
 
-/*Route::get('/page/show/{slug}', function ($slug) {
+Route::get('/page/show/{slug}', function ($slug) {
     $fbclid = ((string) Str::uuid());
     Cookie::queue('fbid', $fbclid, 0);
     $page = Page::where('slug', $slug)->first();
     $states = States::orderBy('name')->get();
     
     return view('page_show')->with(['page' => $page, 'states' => $states]);
-})->name('page.show');*/
+})->name('page.show');
 
 Route::get('/indica', function () {
     
